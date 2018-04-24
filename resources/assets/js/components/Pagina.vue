@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div v-bind:class="defineTamanho">
-                \<slot></slot>
+                <slot></slot>
             </div>
         </div>
     </div>

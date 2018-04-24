@@ -44073,12 +44073,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { class: _vm.defineTamanho },
-        [_vm._v("\n            \\"), _vm._t("default")],
-        2
-      )
+      _c("div", { class: _vm.defineTamanho }, [_vm._t("default")], 2)
     ])
   ])
 }
