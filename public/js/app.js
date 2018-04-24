@@ -44205,7 +44205,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         lista: function lista() {
             var _this = this;
 
-            var busca = "php";
+            this.itens.sort(function (a, b) {
+                if (a[1] > b[1]) {
+                    return 1;
+                }
+                if (a[1] < b[1]) {
+                    return -1;
+                }
+                return 0;
+            });
+
             return this.itens.filter(function (res) {
                 for (var k = 0; k < res.length; k++) {
                     if ((res[k] + "").toLowerCase().indexOf(_this.buscar.toLowerCase()) >= 0) {
