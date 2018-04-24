@@ -21,6 +21,8 @@ Vue.component('caixa-component', require('./components/Caixa.vue'));
 Vue.component('pagina-component', require('./components/Pagina.vue'));
 Vue.component('tabela-lista-component', require('./components/TabelaLista.vue'));
 Vue.component('migalhas-component', require('./components/Migalhas.vue'));
+Vue.component('modal-component', require('./components/modal/Modal.vue'));
+Vue.component('modal-link-component', require('./components/modal/ModalLink.vue'));
 
 const app = new Vue({
     el: '#app'
