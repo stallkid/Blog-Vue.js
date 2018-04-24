@@ -1,6 +1,11 @@
 <template>
 <div>
-    <a v-if="criar" v-bind:href="criar">Criar</a>
+    <div class="form-inline">
+        <a v-if="criar" v-bind:href="criar">Criar</a>
+        <div class="form-group pull-right">
+            <input type="search" class="form-control" placeholder="Buscar" v-model="buscar">{{ buscar }}
+        </div>
+    </div>
 
     <table class="table table-striped table-hover">
         <thead>
@@ -11,8 +16,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="(item,index) in itens">
+            <tr v-for="(item,index) in lista">
                 <td v-for="i in item">{{i}}</td>
+
                 <td v-if="detalhe || editar || deletar">
                     <form v-bind:id="index" v-if="deletar && token" v-bind:action="deletar" method="post">
                         <input type="hidden" name="_method" value="DELETE">
@@ -20,6 +26,7 @@
 
                         <a v-if="detalhe" v-bind:href="detalhe">Detalhe |</a>
                         <a v-if="editar" v-bind:href="editar"> Editar |</a>
+
                         <a href="#" v-on:click="executaForm(index)">Deletar</a>
                     </form>
                     <span v-if="!token">
@@ -41,11 +48,25 @@
 <script>
     export default {
         props: ['titulos', 'itens', 'detalhe', 'criar', 'editar', 'deletar', 'token'],
+        data: function() {
+            return {
+                buscar: ''
+            }
+        },
+        methods:{
+            executaForm: function(index) {
+                document.getElementById(index).submit();
+            }
+        },
         computed:{
-            methods:{
-                executaForm: function(index) {
-                    document.getElementById(index).submit();
-                }
+            lista: function() {
+                let busca = "php";
+                return this.itens.filter(res => {
+                    return false;
+                });
+
+
+                return this.itens;
             }
         }
     }
