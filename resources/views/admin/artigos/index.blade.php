@@ -3,7 +3,70 @@
 @section('content')
     <pagina-component tamanho="12">
         <painel-component titulo="Lista de Artigos">
-            Teste de conteúdo...
+            <a href="#">Criar</a>
+
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Título</th>
+                        <th>Descrição</th>
+                        <th>Autor</th>
+                        <th>Data</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Título...</td>
+                        <td>Descrição...</td>
+                        <td>Autor...</td>
+                        <td>Data...</td>
+                        <td>
+                            <a href="#">Editar</a>
+                             |
+                            <a href="#">Deletar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Título...</td>
+                        <td>Descrição...</td>
+                        <td>Autor...</td>
+                        <td>Data...</td>
+                        <td>
+                            <a href="#">Editar</a>
+                             |
+                            <a href="#">Deletar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Título...</td>
+                        <td>Descrição...</td>
+                        <td>Autor...</td>
+                        <td>Data...</td>
+                        <td>
+                            <a href="#">Editar</a>
+                             |
+                            <a href="#">Deletar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Título...</td>
+                        <td>Descrição...</td>
+                        <td>Autor...</td>
+                        <td>Data...</td>
+                        <td>
+                            <a href="#">Editar</a>
+                             | 
+                            <a href="#">Deletar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
         </painel-component>
     </pagina-component>
