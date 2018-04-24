@@ -5,21 +5,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <painel-component titulo="Dashboard">
+                    <painel-component titulo="Dashboard" cor="blue">
                         Teste de conteúdo...
                         <div class="row">
                             <div class="col-md-4">
-                                <painel-component titulo="Conteúdo 1">
+                                <painel-component titulo="Conteúdo 1" cor="panel-success">
                                     Teste de conteúdo...
                                 </painel-component>
                             </div>
                             <div class="col-md-4">
-                                <painel-component titulo="Conteúdo 2">
+                                <painel-component titulo="Conteúdo 2" cor="orange">
                                     Teste de conteúdo...
                                 </painel-component>
                             </div>
                             <div class="col-md-4">
-                                <painel-component titulo="Conteúdo 3">
+                                <painel-component titulo="Conteúdo 3" cor="panel-danger">
                                     Teste de conteúdo...
                                 </painel-component>
                             </div>
