@@ -10,7 +10,7 @@
     <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th v-for="titulo in titulos">{{ titulo }}</th>
+                <th style="cursor:pointer" v-on:click="ordenaColuna(index)" v-for="(titulo, index) in titulos">{{ titulo }}</th>
 
                 <th v-if="detalhe || editar || deletar">Ação</th>
             </tr>
@@ -56,6 +56,14 @@
         methods:{
             executaForm: function(index) {
                 document.getElementById(index).submit();
+            },
+            ordenaColuna: function(coluna) {
+                this.ordemCol = coluna;
+                if (this.ordem.toLowerCase() == "asc") {
+                    this.ordem = 'desc';
+                } else {
+                    this.ordem = 'asc';
+                }
             }
         },
         computed:{
