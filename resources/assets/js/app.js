@@ -18,6 +18,7 @@ window.Vue = require('vue');
 Vue.component('topo-component', require('./components/Topo.vue'));
 Vue.component('painel-component', require('./components/Painel.vue'));
 Vue.component('caixa-component', require('./components/Caixa.vue'));
+Vue.component('pagina-component', require('./components/Pagina.vue'));
 
 const app = new Vue({
     el: '#app'
