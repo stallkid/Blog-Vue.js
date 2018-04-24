@@ -44203,11 +44203,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     computed: {
         lista: function lista() {
+            var _this = this;
+
             var busca = "php";
             return this.itens.filter(function (res) {
+                for (var k = 0; k < res.length; k++) {
+                    if ((res[k] + "").toLowerCase().indexOf(_this.buscar.toLowerCase()) >= 0) {
+                        return true;
+                    }
+                }
                 return false;
             });
-
             return this.itens;
         }
     }
@@ -44248,8 +44254,7 @@ var render = function() {
               _vm.buscar = $event.target.value
             }
           }
-        }),
-        _vm._v(_vm._s(_vm.buscar) + "\r\n        ")
+        })
       ])
     ]),
     _vm._v(" "),

@@ -3,7 +3,7 @@
     <div class="form-inline">
         <a v-if="criar" v-bind:href="criar">Criar</a>
         <div class="form-group pull-right">
-            <input type="search" class="form-control" placeholder="Buscar" v-model="buscar">{{ buscar }}
+            <input type="search" class="form-control" placeholder="Buscar" v-model="buscar">
         </div>
     </div>
 
@@ -62,10 +62,13 @@
             lista: function() {
                 let busca = "php";
                 return this.itens.filter(res => {
+                    for(let k = 0; k < res.length; k++) {
+                        if ((res[k] + "").toLowerCase().indexOf(this.buscar.toLowerCase()) >= 0) {
+                            return true;
+                        }
+                    }
                     return false;
                 });
-
-
                 return this.itens;
             }
         }
