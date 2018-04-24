@@ -47,7 +47,7 @@
 
 <script>
     export default {
-        props: ['titulos', 'itens', 'detalhe', 'criar', 'editar', 'deletar', 'token'],
+        props: ['titulos', 'itens', 'ordem', 'ordemcol', 'detalhe', 'criar', 'editar', 'deletar', 'token'],
         data: function() {
             return {
                 buscar: ''
@@ -61,11 +61,27 @@
         computed:{
             lista: function() {
 
-                this.itens.sort(function (a,b){
-                    if( a[1] > b[1] ) {return 1;}
-                    if( a[1] < b[1] ) {return -1;}
-                    return 0;
-                });
+                let ordem = this.ordem || "asc";
+                let ordemCol = this.ordemcol || 0;
+
+                ordem = ordem.toLowerCase();
+                ordemCol = parseInt(ordemCol);
+
+                if (ordem == "asc") {
+                    this.itens.sort(function (a,b){
+                        if( a[ordemCol] > b[ordemCol] ) {return 1;}
+                        if( a[ordemCol] < b[ordemCol] ) {return -1;}
+                        return 0;
+                    });
+                } else {
+                    this.itens.sort(function (a,b){
+                        if( a[ordemCol] < b[ordemCol] ) {return 1;}
+                        if( a[ordemCol] > b[ordemCol] ) {return -1;}
+                        return 0;
+                    });
+                }
+
+
 
                 return this.itens.filter(res => {
                     for(let k = 0; k < res.length; k++) {

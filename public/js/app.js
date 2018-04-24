@@ -44190,7 +44190,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['titulos', 'itens', 'detalhe', 'criar', 'editar', 'deletar', 'token'],
+    props: ['titulos', 'itens', 'ordem', 'ordemcol', 'detalhe', 'criar', 'editar', 'deletar', 'token'],
     data: function data() {
         return {
             buscar: ''
@@ -44205,15 +44205,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         lista: function lista() {
             var _this = this;
 
-            this.itens.sort(function (a, b) {
-                if (a[1] > b[1]) {
-                    return 1;
-                }
-                if (a[1] < b[1]) {
-                    return -1;
-                }
-                return 0;
-            });
+            var ordem = this.ordem || "asc";
+            var ordemCol = this.ordemcol || 0;
+
+            ordem = ordem.toLowerCase();
+            ordemCol = parseInt(ordemCol);
+
+            if (ordem == "asc") {
+                this.itens.sort(function (a, b) {
+                    if (a[ordemCol] > b[ordemCol]) {
+                        return 1;
+                    }
+                    if (a[ordemCol] < b[ordemCol]) {
+                        return -1;
+                    }
+                    return 0;
+                });
+            } else {
+                this.itens.sort(function (a, b) {
+                    if (a[ordemCol] < b[ordemCol]) {
+                        return 1;
+                    }
+                    if (a[ordemCol] > b[ordemCol]) {
+                        return -1;
+                    }
+                    return 0;
+                });
+            }
 
             return this.itens.filter(function (res) {
                 for (var k = 0; k < res.length; k++) {
