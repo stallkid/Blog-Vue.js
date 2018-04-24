@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <pagina-component tamanho="7">
+    <pagina-component tamanho="10">
         <painel-component titulo="Dashboard" cor="blue">
             Teste de conteúdo...
             <div class="row">
                 <div class="col-md-4">
-                    <caixa-component qtd="80" titulo="Artigos" url="#" cor="orange" icone="ion ion-pie-graph"></caixa-component>
+                    <caixa-component qtd="80" titulo="Artigos" url="#teste" cor="orange" icone="ion ion-pie-graph"></caixa-component>
                 </div>
                 <div class="col-md-4">
                     <caixa-component qtd="1500" titulo="Usuários" url="#" cor="blue" icone="ion ion-person-stalker"></caixa-component>
