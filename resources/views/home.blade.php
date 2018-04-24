@@ -9,9 +9,7 @@
                         Teste de conteúdo...
                         <div class="row">
                             <div class="col-md-4">
-                                <painel-component titulo="Conteúdo 1" cor="panel-success">
-                                    Teste de conteúdo...
-                                </painel-component>
+                                <caixa-component></caixa-component>
                             </div>
                             <div class="col-md-4">
                                 <painel-component titulo="Conteúdo 2" cor="orange">
