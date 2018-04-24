@@ -50,7 +50,9 @@
         props: ['titulos', 'itens', 'ordem', 'ordemcol', 'detalhe', 'criar', 'editar', 'deletar', 'token'],
         data: function() {
             return {
-                buscar: ''
+                buscar: '',
+                ordemAux: this.ordem || "asc",
+                ordemAuxCol: this.ordemcol || 0
             }
         },
         methods:{
@@ -58,19 +60,19 @@
                 document.getElementById(index).submit();
             },
             ordenaColuna: function(coluna) {
-                this.ordemCol = coluna;
-                if (this.ordem.toLowerCase() == "asc") {
-                    this.ordem = 'desc';
+                this.ordemAuxCol = coluna;
+                if (this.ordemAux.toLowerCase() == "asc") {
+                    this.ordemAux = 'desc';
                 } else {
-                    this.ordem = 'asc';
+                    this.ordemAux = 'asc';
                 }
             }
         },
         computed:{
             lista: function() {
 
-                let ordem = this.ordem || "asc";
-                let ordemCol = this.ordemcol || 0;
+                let ordem = this.ordemAux;
+                let ordemCol = this.ordemAuxCol;
 
                 ordem = ordem.toLowerCase();
                 ordemCol = parseInt(ordemCol);
