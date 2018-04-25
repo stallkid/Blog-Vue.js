@@ -21,7 +21,7 @@
             v-bind:titulos="['#', 'Título', 'Descrição', 'Data']"
             v-bind:itens="{{ $listaArtigos }}"
             ordem="asc" ordemcol="1"
-            detalhe="/admin/artigos/" criar="#criar" editar="/admin/artigos/" deletar="#deletar" token="{{ csrf_token() }}"
+            detalhe="/admin/artigos/" criar="#criar" editar="/admin/artigos/" deletar="/admin/artigos/" token="{{ csrf_token() }}"
             modal="sim"
             ></tabela-lista-component>
         </painel-component>

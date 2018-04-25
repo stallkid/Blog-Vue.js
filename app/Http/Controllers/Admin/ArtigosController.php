@@ -123,6 +123,8 @@ class ArtigosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->model->find($id)->delete();
+
+        return redirect()->back();
     }
 }
