@@ -5,8 +5,16 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Artigo;
+
 class ArtigosController extends Controller
 {
+    protected $model;
+
+    public function __construct(Artigo $model)
+    {
+        $this->model = $model;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -19,10 +27,7 @@ class ArtigosController extends Controller
             ["titulo"=>"Lista de Artigos","url"=>""]
         ]);
 
-        $listaArtigos = json_encode([
-            ["id"=>1,"titulo"=>"PHP OO","descricao"=>"Curso de PHP OO"],
-            ["id"=>2,"titulo"=>"Vue JS","descricao"=>"Curso de Vue JS"],
-        ]);
+        $listaArtigos = json_encode($this->model->select('id', 'titulo', 'descricao', 'data')->get());
 
         return view('admin.artigos.index', compact('listaMigalhas', 'listaArtigos'));
     }
@@ -45,7 +50,12 @@ class ArtigosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+
+        $data = $request->all();
+        $this->model->create($data);
+
+        return redirect()->back();
     }
 
     /**
