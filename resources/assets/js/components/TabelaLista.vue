@@ -75,6 +75,8 @@
         computed:{
             lista: function() {
 
+                this.$store.commit('setItens',{});
+
                 let ordem = this.ordemAux;
                 let ordemCol = this.ordemAuxCol;
 
