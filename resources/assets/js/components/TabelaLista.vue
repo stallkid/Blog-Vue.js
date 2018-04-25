@@ -27,7 +27,7 @@
 
                         <a v-if="detalhe" v-bind:href="detalhe">Detalhe |</a>
                         <a v-if="editar && !modal" v-bind:href="editar"> Editar |</a>
-                        <modal-link-component v-if="editar && modal" tipo="link" nome="editar" titulo=" Editar |" css=""></modal-link-component>
+                        <modal-link-component v-if="editar && modal" v-bind:item="item" tipo="link" nome="editar" titulo=" Editar |" css=""></modal-link-component>
 
                         <a href="#" v-on:click="executaForm(index)">Deletar</a>
                     </form>
@@ -74,8 +74,6 @@
         },
         computed:{
             lista: function() {
-
-                this.$store.commit('setItens',{});
 
                 let ordem = this.ordemAux;
                 let ordemCol = this.ordemAuxCol;
