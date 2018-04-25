@@ -75,7 +75,7 @@ class ArtigosController extends Controller
      */
     public function show($id)
     {
-        //
+        return $this->model->find($id);
     }
 
     /**

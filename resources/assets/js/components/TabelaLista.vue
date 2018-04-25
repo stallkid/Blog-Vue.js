@@ -26,7 +26,7 @@
                         <input type="hidden" name="_token" v-bind:value="token">
 
                         <a v-if="detalhe && !modal" v-bind:href="detalhe">Detalhe |</a>
-                        <modal-link-component v-if="detalhe && modal" v-bind:item="item" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></modal-link-component>
+                        <modal-link-component v-if="detalhe && modal" v-bind:item="item" v-bind:url="detalhe" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></modal-link-component>
 
                         <a v-if="editar && !modal" v-bind:href="editar"> Editar |</a>
                         <modal-link-component v-if="editar && modal" v-bind:item="item" tipo="link" nome="editar" titulo=" Editar |" css=""></modal-link-component>
@@ -36,7 +36,7 @@
                     <span v-if="!token">
 
                         <a v-if="detalhe && !modal" v-bind:href="detalhe">Detalhe |</a>
-                        <modal-link-component v-if="detalhe && modal" v-bind:item="item" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></modal-link-component>
+                        <modal-link-component v-if="detalhe && modal" v-bind:item="item" v-bind:url="detalhe" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></modal-link-component>
 
                         <a v-if="editar && !modal" v-bind:href="editar"> Editar |</a>
                         <modal-link-component v-if="editar && modal" tipo="link" nome="editar" titulo=" Editar |" css=""></modal-link-component>
@@ -45,7 +45,7 @@
                     <span v-if="token && !deletar">
 
                         <a v-if="detalhe && !modal" v-bind:href="detalhe">Detalhe |</a>
-                        <modal-link-component v-if="detalhe && modal" v-bind:item="item" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></modal-link-component>
+                        <modal-link-component v-if="detalhe && modal" v-bind:item="item" v-bind:url="detalhe" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></modal-link-component>
 
                         <a v-if="editar && !modal" v-bind:href="editar"> Editar</a>
                         <modal-link-component v-if="editar && modal" tipo="link" nome="editar" titulo=" Editar" css=""></modal-link-component>

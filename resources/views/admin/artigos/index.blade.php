@@ -21,7 +21,7 @@
             v-bind:titulos="['#', 'Título', 'Descrição', 'Data']"
             v-bind:itens="{{ $listaArtigos }}"
             ordem="asc" ordemcol="1"
-            detalhe="#detalhe" criar="#criar" editar="#editar" deletar="#deletar" token="984964169885648"
+            detalhe="/admin/artigos/" criar="#criar" editar="#editar" deletar="#deletar" token="984964169885648"
             modal="sim"
             ></tabela-lista-component>
         </painel-component>
@@ -73,6 +73,7 @@
     </modal-component>
     {{-------------------------------- DETALHES --------------------------------}}
     <modal-component nome="detalhe" v-bind:titulo="$store.state.item.titulo">
-            <p>@{{ $store.state.item.descricao }}</p>
+            <p><strong>Descrição: </strong>@{{ $store.state.item.descricao }}</p>
+            <p><strong>Conteúdo: </strong>@{{ $store.state.item.conteudo }}</p>
     </modal-component>
 @endsection
