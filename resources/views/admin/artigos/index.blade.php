@@ -14,7 +14,7 @@
             ></tabela-lista-component>
         </painel-component>
     </pagina-component>
-
+    {{-- CRIAR --}}
     <modal-component nome="adicionar">
         <painel-component titulo="Adicionar">
 
@@ -32,7 +32,7 @@
 
         </painel-component>
     </modal-component>
-
+    {{-- EDITAR --}}
     <modal-component nome="editar">
         <painel-component titulo="Editar">
 
@@ -50,22 +50,10 @@
 
         </painel-component>
     </modal-component>
-
+    {{-- DETALHES --}}
     <modal-component nome="detalhe">
-        <painel-component titulo="Detalhe">
-
-            <formulario-component css="" action="#" method="put" enctype="" token="{{ csrf_token() }}">
-                <div class="form-group">
-                    <label for="titulo">Título</label>
-                    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título">
-                </div>
-                <div class="form-group">
-                    <label for="descricao">Descrição</label>
-                    <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
-                </div>
-                <button class="btn btn-info">Adicionar</button>
-            </formulario-component>
-
+        <painel-component v-bind:titulo="$store.state.item.titulo">
+            <p>@{{ $store.state.item.descricao }}</p>
         </painel-component>
     </modal-component>
 @endsection
