@@ -19,11 +19,14 @@
 
             <tabela-lista-component
             v-bind:titulos="['#', 'Título', 'Descrição', 'Data']"
-            v-bind:itens="{{ $listaArtigos }}"
+            v-bind:itens="{{ json_encode($listaArtigos) }}"
             ordem="asc" ordemcol="1"
             detalhe="/admin/artigos/" criar="#criar" editar="/admin/artigos/" deletar="/admin/artigos/" token="{{ csrf_token() }}"
             modal="sim"
             ></tabela-lista-component>
+            <div align="center">
+                {{$listaArtigos}}
+            </div>
         </painel-component>
     </pagina-component>
     {{--============================== CRIAR -----------------------------------}}

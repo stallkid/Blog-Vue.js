@@ -27,7 +27,7 @@ class ArtigosController extends Controller
             ["titulo"=>"Lista de Artigos","url"=>""]
         ]);
 
-        $listaArtigos = json_encode($this->model->select('id', 'titulo', 'descricao', 'data')->get());
+        $listaArtigos = $this->model->select('id', 'titulo', 'descricao', 'data')->paginate(2);
 
         return view('admin.artigos.index', compact('listaMigalhas', 'listaArtigos'));
     }
