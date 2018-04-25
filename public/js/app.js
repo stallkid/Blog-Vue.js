@@ -45390,6 +45390,7 @@ var render = function() {
                               ? _c("modal-link-component", {
                                   attrs: {
                                     item: item,
+                                    url: _vm.editar,
                                     tipo: "link",
                                     nome: "editar",
                                     titulo: " Editar |",
@@ -45447,6 +45448,8 @@ var render = function() {
                             _vm.editar && _vm.modal
                               ? _c("modal-link-component", {
                                   attrs: {
+                                    item: item,
+                                    url: _vm.editar,
                                     tipo: "link",
                                     nome: "editar",
                                     titulo: " Editar |",
@@ -45497,6 +45500,8 @@ var render = function() {
                             _vm.editar && _vm.modal
                               ? _c("modal-link-component", {
                                   attrs: {
+                                    item: item,
+                                    url: _vm.editar,
                                     tipo: "link",
                                     nome: "editar",
                                     titulo: " Editar",

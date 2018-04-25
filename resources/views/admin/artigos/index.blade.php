@@ -21,7 +21,7 @@
             v-bind:titulos="['#', 'Título', 'Descrição', 'Data']"
             v-bind:itens="{{ $listaArtigos }}"
             ordem="asc" ordemcol="1"
-            detalhe="/admin/artigos/" criar="#criar" editar="#editar" deletar="#deletar" token="984964169885648"
+            detalhe="/admin/artigos/" criar="#criar" editar="/admin/artigos/" deletar="#deletar" token="{{ csrf_token() }}"
             modal="sim"
             ></tabela-lista-component>
         </painel-component>
@@ -56,14 +56,23 @@
     {{-------------------------------- EDITAR ----------------------------------}}
     <modal-component nome="editar" titulo="Editar">
 
-            <formulario-component id="formEditar" css="" action="#" method="put" enctype="" token="{{ csrf_token() }}">
+            <formulario-component id="formEditar" v-bind:action="'/admin/artigos/'+ $store.state.item.id" method="put" enctype="" token="{{ csrf_token() }}">
                 <div class="form-group">
                     <label for="titulo">Título</label>
-                    <input type="text" class="form-control" id="titulo" name="titulo" v-model="$store.state.item.titulo" placeholder="Título">
+                    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título"
+                    v-model="$store.state.item.titulo">
                 </div>
                 <div class="form-group">
                     <label for="descricao">Descrição</label>
-                    <input type="text" class="form-control" id="descricao" v-model="$store.state.item.descricao" name="descricao" placeholder="Descrição">
+                    <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição" v-model="$store.state.item.descricao">
+                </div>
+                <div class="form-group">
+                    <label for="conteudo">Conteudo</label>
+                    <textarea id="conteudo" class="form-control" name="conteudo" v-model="$store.state.item.conteudo"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="data">Data</label>
+                    <input type="datetime-local" class="form-control" id="data" name="data" v-model="$store.state.item.data">
                 </div>
             </formulario-component>
             <span slot="botoes">
